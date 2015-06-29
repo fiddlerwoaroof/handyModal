@@ -1,0 +1,36 @@
+.modal-wrapper {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+}
+.modal-wrapper {
+  background: hsla(0,0%,25%,0.5);
+}
+.modal-wrapper.open {
+  display: block;
+}
+
+.modal-wrapper > div {
+  border: thin solid black;
+  box-shadow: 0em 0em 0.1em #ccc;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  overflow: hidden;
+  box-shadow: 0em 0em 0.2em #444;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  background: white;
+}
