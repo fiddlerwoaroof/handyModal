@@ -8,11 +8,11 @@
       var target = $(this.dataset.target);
       var action = this.dataset.action;
       if (action === 'open') {
-        var modal = $('<div class="modal"></div>');
+        var modal = $('<div></div>');
         var wrapper = $('<div class="modal-wrapper"></div>').append(modal);
         console.log(target);
         modal.append(target);
-        modal.wrap('<div>');
+        modal.wrap('<div class="modal">');
         $('body').append(wrapper);
         wrapper.click(function() {
           wrapper.removeClass('open');
