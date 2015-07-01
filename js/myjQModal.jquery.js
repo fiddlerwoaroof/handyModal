@@ -18,9 +18,12 @@
           wrapper.removeClass('open');
           currentModal = null;
         });
-        modal.click(function(ev) {
-          ev.stopPropagation();
-        });
+
+        if (! target.hasClass('close-on-click')) {
+          modal.click(function(ev) {
+            ev.stopPropagation();
+          });
+        }
       }
       $(this).click(function() {
         if (action === 'open') {
