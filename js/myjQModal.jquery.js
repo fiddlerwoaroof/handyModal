@@ -3,6 +3,7 @@
   $.fn.myjQModal = function() {
     'use strict';
     var self=this;
+    var currentModal = null;
     $(self).each(function() {
       var target = $(this.dataset.target);
       var action = this.dataset.action;
@@ -15,14 +16,22 @@
         $('body').append(wrapper);
         wrapper.click(function() {
           wrapper.removeClass('open');
+          currentModal = null;
         });
         modal.click(function(ev) {
           ev.stopPropagation();
         });
       }
       $(this).click(function() {
-        if (action === 'open') { wrapper.addClass('open'); }
-        else if (action === 'close') {wrapper.removeClass('open'); }
+        if (action === 'open') {
+          if (currentModal !== null) { currentModal.removeClass('open'); }
+          wrapper.addClass('open');
+          currentModal = wrapper;
+        }
+        else if (action === 'close') {
+          currentModal = null;
+          wrapper.removeClass('open');
+        }
       });
     });
     return this;

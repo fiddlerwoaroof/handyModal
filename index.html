@@ -9,13 +9,14 @@
   </head>
   <body>
     <div id="background"></div>
-    <button data-action="open" data-target="#modal">Show!</button>
+    <button  data-action="open" data-target="#modal"> open modal! </button>
+    <div id="modal">
+      <button  data-action="open" data-target="#modal2"> open modal! </button>
+      Howdy!
+    </div>
+    <div id="modal2">
+      This is the second modal!
+    </div>
 
-      <div id="modal">
-        Howdy!
-        <form action='#'>
-          <input name="text" type="text">
-          <input type="submit">
-      </div>
   </body>
 </html>
