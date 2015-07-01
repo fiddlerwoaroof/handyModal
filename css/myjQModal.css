@@ -1,4 +1,4 @@
-.modal-wrapper {
+.myjQModal-wrapper {
   display: none;
   position: fixed;
   top: 0px;
@@ -6,10 +6,10 @@
   height: 100%;
   width: 100%;
 }
-.modal-wrapper {
+.myjQModal-wrapper {
   background: hsla(0,0%,25%,0.5);
 }
-.modal-wrapper.open {
+.myjQModal-wrapper.open {
   display: block;
 }
 
