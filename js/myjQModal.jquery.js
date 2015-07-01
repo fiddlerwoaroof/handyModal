@@ -9,10 +9,10 @@
       var action = this.dataset.action;
       if (action === 'open') {
         var modal = $('<div></div>');
-        var wrapper = $('<div class="modal-wrapper"></div>').append(modal);
+        var wrapper = $('<div class="myjQModal-wrapper"></div>').append(modal);
         console.log(target);
         modal.append(target);
-        modal.wrap('<div class="modal">');
+        modal.wrap('<div class="myjQModal">');
         $('body').append(wrapper);
         wrapper.click(function() {
           wrapper.removeClass('open');

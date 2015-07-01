@@ -13,7 +13,7 @@
   display: block;
 }
 
-.modal-wrapper > div.modal {
+.myjQModal-wrapper > div.myjQModal {
   border: thin solid black;
   box-shadow: 0em 0em 0.1em #ccc;
   width: auto;
@@ -28,7 +28,7 @@
   background: white;
 }
 
-div.modal > div {
+div.myjQModal > div {
   position: relative;
   width: 100%;
   height: 100%;
