@@ -30,7 +30,7 @@
         });
       }
 
-      this.myjQModal = {
+      target.myjQModal = this.myjQModal = {
         target: target,
         action: action,
         modal: modal,
@@ -55,6 +55,6 @@
       return this;
     };
   $(document).ready(function() {
-    $('button[data-action=open]').myjQModal();
+    $('button[data-type=modalTrigger]').myjQModal();
   });
 }( jQuery ));
