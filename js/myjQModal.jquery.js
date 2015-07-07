@@ -1,10 +1,10 @@
 (function ($) {
 
+  var currentModal = null;
   $.fn.myjQModal = function() {
     'use strict';
     var self=this;
     var $self = $(self);
-    var currentModal = null;
 
     if ($self.length === 1 && $self[0].myjQModal !== undefined) { return $self[0].myjQModal; }
 
@@ -37,8 +37,8 @@
         wrapper: wrapper,
 
         open: function() {
-          if (currentModal !== null) { currentModal.removeClass('open'); }
           this.wrapper.addClass('open');
+          if (currentModal !== null) { currentModal.removeClass('open'); }
           currentModal = wrapper;
         },
         close: function() {
