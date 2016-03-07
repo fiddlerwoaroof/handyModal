@@ -15,7 +15,7 @@
       var action = this.dataset.action;
       var modal = $('<div></div>');
       var wrapper = $('<div class="myjQModal-wrapper"></div>').append(modal);
-      console.log(target);
+      //console.log(target);
       modal.append(target);
       modal.wrap('<div class="myjQModal">');
       $('body').append(wrapper);
@@ -48,6 +48,7 @@
       };
 
       $(this).click(function() {
+          console.log('this should happen');
         if (action === 'open') { this.myjQModal.open(); }
         else if (action === 'close') { this.myjQModal.close(); }
       });
@@ -55,6 +56,7 @@
       return this;
     };
   $(document).ready(function() {
+      console.log('boo');
     $('button[data-type=modalTrigger]').myjQModal();
   });
 }( jQuery ));
