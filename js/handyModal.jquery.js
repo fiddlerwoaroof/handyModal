@@ -1,26 +1,27 @@
+scriptTag = null;
 (function ($) {
 
   var currentModal = null;
-  $.fn.myjQModal = function() {
+  $.fn.handyModal = function() {
       'use strict';
       var self=this;
       var $self = $(self);
 
-      if ($self.length === 1 && $self[0].myjQModal !== undefined) { return $self[0].myjQModal; }
+      if ($self.length === 1 && $self[0].handyModal !== undefined) { return $self[0].handyModal; }
 
       $(self).each(function() {
-          if (this.myjQModal === undefined) {
+          if (this.handyModal === undefined) {
               var target = $(this.dataset.target);
-              var targetModal = target.data('myjQModal');
+              var targetModal = target.data('handyModal');
               var action = this.dataset.action;
-              var wrapper = target.closest('.myjQModal-wrapper');
+              var wrapper = target.closest('.handyModal-wrapper');
 
               if (targetModal === undefined) {
                   var modal = $('<div></div>');
-                  wrapper = $('<div class="myjQModal-wrapper"></div>').append(modal);
+                  wrapper = $('<div class="handyModal-wrapper"></div>').append(modal);
 
                   modal.append(target);
-                  modal.wrap('<div class="myjQModal">');
+                  modal.wrap('<div class="handyModal">');
                   $('body').append(wrapper);
 
                   wrapper.click(function() {
@@ -37,7 +38,7 @@
                   target.removeClass('preinit');
               }
 
-              this.myjQModal = {
+              this.handyModal = {
                   target: target,
                   action: action,
                   wrapper: wrapper,
@@ -54,16 +55,24 @@
               };
 
               if (targetModal === undefined) {
-                  target.data('myjQModal', this.myjQModal);
+                  target.data('handyModal', this.handyModal);
               }
 
               $(this).click(function() {
                   console.log('this should happen');
-                  if (action === 'open') { this.myjQModal.open(); }
-                  else if (action === 'close') { this.myjQModal.close(); }
+                  if (action === 'open') { this.handyModal.open(); }
+                  else if (action === 'close') { this.handyModal.close(); }
               });
-          };
+          }
       });
       return this;
   };
+
+  $(document).ready(function() {
+    scriptTag = document.querySelector('script#handyModal');
+
+    if (scriptTag && scriptTag.dataset.hasOwnProperty('initialize')) {
+      $('[data-target]').handyModal();
+    }
+  });
 }( jQuery ));

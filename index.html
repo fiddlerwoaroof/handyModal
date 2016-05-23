@@ -3,20 +3,29 @@
   <head>
     <meta charset="UTF-8">
     <title></title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
-    <script src="js/myjQModal.jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <link rel="stylesheet" href="css/myjQModal.css">
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+      .modal-el {
+        padding: 10em 7.5em;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div id="background"></div>
     <button  data-action="open" data-target="#modal"> open modal! </button>
-    <div id="modal">
+    <div class="modal-el" id="modal">
       <button  data-action="open" data-target="#modal2"> open modal! </button>
-      Howdy!
+      This is the first modal!
     </div>
-    <div id="modal2" class="close-on-click">
+    <div class="modal-el close-on-click" id="modal2">
       This is the second modal!
     </div>
 
+    <script id="handyModal" data-initialize src="js/handyModal.jquery.js"></script>
   </body>
 </html>
